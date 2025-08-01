@@ -3,41 +3,20 @@ let dades = [];
 document.addEventListener("DOMContentLoaded", function() {
  fetch('dades.json')
   .then(response => response.json())
-  .then(json => {
-    // existing logic...
-  })
-  .catch(error => {
-    console.error("Error loading dades.json:", error);
-    alert("No s'ha pogut carregar les dades.");
-  });
-
+ .then(json => {
+  dades = json;
   //Obtenir valors únics per a cada camp
- const fields = ["Gen 1", "Fenotip 1", "Gen 2", "Fenotip 2"];
-const values = {};
-
-fields.forEach(field => {
-  values[field] = [...new Set(json.map(item => item[field]))];
-});
+  const gens1 = [...new Set(dades.map(d => d["Gen 1"]))];
+  const fenotips1 = [...new Set(dades.map(d => d["Fenotip 1"]))];
+  const gens2 = [...new Set(dades.map(d => d["Gen 2"]))];
+  const fenotips2 = [...new Set(dades.map(d => d["Fenotip 2"]))];
 
   //Omplir desplegables amb valors únics
-omplirSelect("gen1", values["Gen 1"]);
-omplirSelect("fenotip1", values["Fenotip 1"]);
-omplirSelect("gen2", values["Gen 2"]);
-omplirSelect("fenotip2", values["Fenotip 2"]);
-function omplirSelect(id, valors) {
-  const select = document.getElementById(id);
-  if (!select) {
-    console.warn(`Element with id '${id}' not found.`);
-    return;
-  }
-
-  valors.forEach(valor => {
-    const option = document.createElement("option");
-    option.value = valor;
-    option.textContent = valor;
-    select.appendChild(option);
-  });
-}
+  omplirSelect('gen1', gens1);
+  omplirSelect('fenotip1', fenotips1);
+  omplirSelect('gen2', gens2);
+  omplirSelect('fenotip2', fenotips2);
+});
 });
 
 function omplirSelect(id, opcions) {
