@@ -38,8 +38,7 @@ function omplirSelect(id, valors) {
     select.appendChild(option);
   });
 }
-}
-);
+});
 
 function omplirSelect(id, opcions) {
  const select = document.getElementById(id);
