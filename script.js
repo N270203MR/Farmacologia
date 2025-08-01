@@ -2,7 +2,7 @@ let dades = [];
 
 document.addEventListener("DOMContentLoaded", function() {
  fetch('dades.json')
-  .then(response =< response.json())
+  .then(response => response.json())
  .then(json => { 
       dades = json;
  
