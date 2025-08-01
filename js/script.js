@@ -3,7 +3,7 @@ let dades = [];
 document.addEventListener("DOMContentLoaded", function() {
  fetch('dades.json')
   .then(response => response.json())
- .then(json => {
+  .then(json => {
   dades = json;
   //Obtenir valors únics per a cada camp
   const gens1 = [...new Set(dades.map(d => d["Gen 1"]))];
