@@ -62,15 +62,4 @@ const resultat = dades.find(d =>
     div.innerHTML = '<p>⚠️ No s’ha trobat cap recomanació per aquesta combinació.</p>';
   }
 }
-
-function descarregarPDF() {
- const resultatHTML = document.getElementById("resultat").innerText;
- const { jsPDF } = window.jspdf;
- const doc = new jsPDF();
- const text = resultatHTML.split('\n');
- text.forEach((line, i => {
-  doc.text(line, 10, 10 + i * 10);
-});
- doc.save("recomanacio.pdf");
-}
  
