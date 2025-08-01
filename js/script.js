@@ -24,7 +24,7 @@ function omplirSelect(id, opcions) {
  const select = document.getElementById(id);
  select.innerHTML = '<option value="">-- Selecciona --</option>';
  opcions.forEach(opcio => {
-  const opt = document.createrElement('option');
+  const opt = document.createElement('option');
   opt.value = opcio;
   opt.textContent = opcio;
   select.appendChild(opt);
