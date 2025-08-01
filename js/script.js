@@ -76,8 +76,8 @@ const resultat = dades.find(d =>
   <p><strong>Família:</strong> ${resultat["Família"] || ""}</p>
   <p><strong>Fàrmac:</strong> ${resultat["Fàrmac"] || ""}</p>
   <p><strong>Recomanació:</strong> ${resultat["Recomanació"] || ""}</p>
-  <p><strong>Font:</strong> ${resultat["Font"] || ""}</p>
-`;
+  <p><strong>Font:</strong> ${resultat["Font"] || ""}</p>`
+   ;
   } else {
     div.innerHTML = '<p>⚠️ No s’ha trobat cap recomanació per aquesta combinació.</p>';
   }
