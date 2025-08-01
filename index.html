@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Informe Farmacogenètic</title>
+  <script defer src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    select, button {
+      width: 300px;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 16px;
+      cursor: pointer;
+    }
+    #resultat {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Recomanacions Farmacogenètiques</h1>
+
+  <label for="gen1">Gen 1:</label>
+  <select id="gen1"></select>
+
+  <label for="fenotip1">Fenotip 1:</label>
+  <select id="fenotip1"></select>
+
+  <label for="gen2">Gen 2:</label>
+  <select id="gen2"></select>
+
+  <label for="fenotip2">Fenotip 2:</label>
+  <select id="fenotip2"></select>
+
+  <button onclick="mostrarRecomanacio()">Mostrar Recomanació</button>
+  <button onclick="descarregarPDF()">Descarregar PDF</button>
+
+  <div id="resultat"></div>
+</body>
+</html>
