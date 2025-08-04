@@ -6,6 +6,9 @@
   <script src="js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
+     #gen2, #fenotip2 {
+            display: none;
+        }
     body {
       font-family: Arial, sans-serif;
       margin: 30px;
@@ -37,17 +40,49 @@
   <h1>Recomanacions Farmacogenètiques</h1>
 
   <label for="gen1">Gen 1:</label>
-  <select id="gen1"></select>
-
+  <select id="gen1" onchange="mostrarGen2()">
+    <option value="">Selecciona un gen</option>
+  </select>
+  
   <label for="fenotip1">Fenotip 1:</label>
-  <select id="fenotip1"></select>
+  <select id="fenotip1">
+      <option value="">Selecciona un fenotip</option>
+    </select>
+  
+<div id="gen2">
+  <label for="gen2_select">Gen 2:</label>
+  <select id="gen2_select"></select>
+  <option value="">Selecciona un gen</option>
+  </select>
+</div>
 
-  <label for="gen2">Gen 2:</label>
-  <select id="gen2"></select>
+  <div id="fenotip2">
+  <label for="fenotip2_select">Fenotip 2:</label>
+  <select id="fenotip2_select"></select>
+  <option value="">Selecciona un fenotip</option>
+  </select>
+  </div>
+  <script>
+    function mostrarGen2() {
+      var gen1 = document.getElementById("gen1").value;
+      var gen2Div = document.getElementById("gen2");
+      var fenotip2Div = document.getElementById("fenotip2");
 
-  <label for="fenotip2">Fenotip 2:</label>
-  <select id="fenotip2"></select>
+      if (gen1) {
+        gen2Div.style.display = "block";
+       } else {
+        gen2Div.style.display = "none";
+        fenotip2Div.style.display = "none";
+        }
 
+    var gen2 = document.getElementById("gen2_select").value;
+    if (gen2) {
+      fenotip2Div.style.display = "block"
+      }
+      }
+
+    window.onload = mostrarGen2;
+  </script>
   <button onclick="mostrarRecomanacio()">Mostrar Recomanació</button>
 
   <div id="resultat"></div>
