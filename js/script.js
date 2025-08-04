@@ -36,7 +36,7 @@ function mostrarRecomanacio() {
  const g2 = document.getElementById("gen2").value;
  const f2 = document.getElementById("fenotip2").value;
 
-const resultat = dades.filter(d => 
+const resultats = dades.filter(d => 
  d["Gen 1"] === g1 && 
  d["Fenotip 1"] === f1 && 
  d["Gen 2"] === g2 && 
